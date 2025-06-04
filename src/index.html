@@ -1,22 +1,116 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <link rel="stylesheet" href="styles.css" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>PakePlus App</title>
-        <script type="module" src="/main.js" defer></script>
-    </head>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="viewport" content="width=device-width">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="DOMPurify" src="./purify.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="libs/lodash" src="./lodash.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="libs/platform" src="./platform.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="libs/iscroll-probe" src="./iscroll-probe.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="hammer" src="./hammer.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="libs/d3/d3" src="./d3.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="libs/cultures/globalize.culture.zh" src="./globalize.culture.zh.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="text" src="./text.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="widgets/brease/KeyBoard/libs/external/PluginZhCHS" src="./PluginZhCHS.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="system/widgets/KeyBoard/libs/external/dictionaries" src="./dictionaries.js"></script><!--<base href="/BRVisu/">--><base href=".">
+    <style>
+        #connectionFailedMsgBox {
+            z-index:100;
+            position:fixed; 
+            padding:0px;
+            margin:0px; 
+            background-color:rgba(0,0,0,0.18); 
+            top:0; 
+            left:0;
+            width:100%;
+            height:100%;
+        }
+        #connectionFailedMsgBox div {
+            position:absolute; 
+            padding:20px; 
+            width:400px; 
+            margin-left:-220px;
+            color:red; 
+            background-color:white;
+            font-size:20px;
+            left:50%;
+            top:50%;
+            text-align:center;
+            white-space:pre-wrap;
+        }
+    </style>
+    <script>
+        (function () {
+            var loadScript = function (src, onLoad) {
+                var script = document.createElement('script'); 
+                script.src = src;
+                document.head.appendChild(script);
+                script.onload = onLoad;
+            };
+            if (/devtool=true/.test(window.location)) {
+                loadScript('libs/eruda/eruda.js', function () {
+                    eruda.init({tool: ['console', 'elements', 'network', 'resources', 'info']});
+                    eruda.position({x: 5, y: 5});
+                    loadScript('libs/eruda/eruda-timing.js', function () {
+                        eruda.add(window.erudaTiming);
+                    });
+                    loadScript('libs/eruda/eruda-dom.js', function () {
+                        eruda.add(window.erudaDom);
+                    });
+                });
+            }
+        })();
+    </script>
+    <script src="./platform.js"></script>
+    <title>楚天BFS模拟器 V2.2</title>
+<link href="http://127.0.0.1/favicon.ico" rel="icon" type="image/x-icon"><link rel="stylesheet" href="./brease_core.min.css"><link id="theme_BuRThemeFlat2" href="./BuRThemeFlat2.min.css" rel="stylesheet"></head>
 
-    <body>
-        <main class="container">
-            <h1>Welcome to PakePlus</h1>
+<body class="system_brease_Scrollbar_style_default system_brease_Body_style_default system_brease_ModalDimmer_style_default" style="touch-action: none; user-select: none; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); overflow: auto;"><div id="breaseKeyBoard" data-brease-widget="widgets/brease/KeyBoard" data-lang="zh-CHS" class="breaseWidget breaseKeyBoard breaseWindow widgets_brease_KeyBoard_style_default">
+            </section>
+        </div>
+    <div id="appContainer" style="width: 1920px; height: 1080px;"><div style="width:1920px;height:1080px;display:block;position:absolute;z-index:0;" id="Layout_MainLayout" class="breaseLayout system_brease_Page_style_default" data-brease-layoutid="MainLayout" data-brease-pageid="page_start"><div id="root_MainLayout_TopContent" style="position: absolute; z-index: 0; overflow: hidden; top: 0px; left: 0px; width: 1920px; height: 80px; box-sizing: border-box; display: none;" class="LayoutArea" data-brease-areaid="TopContent"><div id="root_MainLayout_TopContent_box" class="ScrollBox" style="position:absolute;top:0px; left:0px; width:1920px; height:80px; box-sizing: border-box;display:block;"></div></div><div id="root_MainLayout_AreaContent" style="position: absolute; z-index: 2; overflow: hidden; top: 80px; left: 0px; width: 1920px; height: 920px; box-sizing: border-box; display: block; background-color: rgb(255, 255, 255);" class="LayoutArea system_brease_Area_style_default" data-brease-areaid="AreaContent"><div id="root_MainLayout_AreaContent_box" class="ScrollBox" style="position:absolute;top:0px; left:0px; width:1920px; height:920px; box-sizing: border-box;display:block;"><div id="SystemLoader1" data-brease-widget="system/widgets/ContentLoader" style="box-sizing: border-box; position: relative; overflow: hidden; visibility: visible; width: 1920px; height: 920px; transform: scale(1, 1); transform-origin: 0px 0px;" class="systemContentLoader breaseWidget" data-brease-contentid="content_start"><div id="content_start_Image1" data-brease-widget="widgets/brease/Image" class="droppableItem breaseWidget breaseImage widgets_brease_Image_style_default"><div class="ImageView" style="height: 100%; width: 100%; text-align: left;"><span class="ImageView helper" style="vertical-align: top;"></span><img draggable="false" style="position: relative; inset: auto; vertical-align: top; width: auto; height: 100%;" src="./logo.png"><svg style="display: none; position: relative; bottom: auto; top: auto;"></svg></div></div><div id="content_start_NavigationButton1" data-brease-widget="widgets/brease/NavigationButton" data-multitouch="true" class="droppableItem image-left breaseWidget breaseNavigationButton breaseToggleButton breaseButton widgets_brease_NavigationButton_style_default"onclick="window.location.href='./home page.html'"><img style="display: none;"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Ebene_1" x="0px" y="0px" viewBox="0 0 32 32" style="enable-background:new 0 0 32 32;" xml:space="preserve" width="32px" height="32px" class="br-symbol-library">
+<g id="Logout">
+	<path d="M18.2,5.4H14v2h4.3v4h2v-4C20.3,6.2,19.4,5.4,18.2,5.4z M18.3,20.9v3.8H14v2h4.2c1.2,0,2.1-0.9,2.1-2.1v-3.7H18.3z    M12.4,3.4c-0.2-0.1-0.4-0.2-0.6-0.2c-0.1,0-0.2,0-0.3,0L0.8,5.3C0.4,5.4,0.3,5.6,0.2,5.7C0.1,5.9,0,6.1,0,6.4v19.3   c0,0.4,0.1,0.6,0.2,0.7c0.1,0.1,0.3,0.3,0.6,0.4l10.7,2.1c0.1,0,0.2,0,0.3,0c0.2,0,0.4-0.1,0.6-0.2c0.3-0.2,0.4-0.5,0.4-0.9V4.2   C12.8,3.9,12.6,3.6,12.4,3.4z M9.1,16.5c-0.6,0-1.1-0.5-1.1-1.1c0-0.6,0.5-1.1,1.1-1.1c0.6,0,1.1,0.5,1.1,1.1   C10.2,16.1,9.7,16.5,9.1,16.5z M31.8,16.3l-3.3,3.3l-2.1,2.1l-2.5,2.4c-0.1,0.1-0.2,0.1-0.3,0.1c-0.2,0-0.3-0.1-0.3-0.3v-4.5h-7.8   c-0.3,0-0.7-0.5-0.7-0.8v-5.4c0-0.3,0.4-0.3,0.7-0.3h7.8v-5c0-0.2,0.2-0.3,0.3-0.3c0.1,0,0.2,0,0.3,0.1l2.5,2.4l2.1,2.1l3.3,3.3   C32.1,15.7,32,16.1,31.8,16.3z"></path>
+</g>
+<g id="Ebene_1_1_">
+</g>
+</svg><span class="up">回到主页面</span></div>
+<!-- 新增的无框F5按钮 -->
+<div 
+  style="position: absolute; 
+         right: 15px; 
+         top: 80px; 
+         width: 150px; 
+         height: 40px; 
+         background-color: transparent;  
+         border: none;                 
+         cursor: pointer;  
+         text-align: center; 
+         line-height: 40px; 
+         color: #646464; 
+         font-size: 16px; 
+         font-family: Arial, sans-serif;"
+  onclick="fullReset()">
+  
+  <img src="./F5.png" 
+       style="width: 24px; 
+              height: 24px; 
+              margin-right: 8px; 
+              vertical-align: middle;">
+  重置模拟器
+</div>
 
-            <form class="row" id="greet-form">
-                <input id="greet-input" placeholder="Enter a name..." />
-                <button type="submit">Greet</button>
-            </form>
-            <p id="greet-msg"></p>
-        </main>
-    </body>
-</html>
+<script>
+function fullReset() {
+  // 清除Service Workers
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then(registrations => {
+      Promise.all(registrations.map(r => r.unregister()));
+    });
+  }
+
+  // 清除LocalStorage和SessionStorage
+  localStorage.clear();
+  sessionStorage.clear();
+
+  // 强制刷新页面
+  location.reload(true);
+}
+</script>
+</div></div></div>
+<div id="root_MainLayout_PageContent" style="position: absolute; z-index: 4; overflow: hidden; top: 1000px; left: 0px; width: 1920px; height: 80px; box-sizing: border-box; display: none;" class="LayoutArea" data-brease-areaid="PageContent"><div id="root_MainLayout_PageContent_box" class="ScrollBox" style="position:absolute;top:0px; left:0px; width:1920px; height:80px; box-sizing: border-box;display:block;"></div></div></div></div>
+    
+
+<script src="./brease.js"></script><script>require(["brease/application"], function (application) {application.startVisu("qd_bfs",{"warn":false,"editMode":false,"detection":{"mobile":false,"os":"Windows","browser":"Chrome","ios":false},"storageLog":false});});</script></body></html>
